@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="60" fill="url(#g1)" />
+  <rect x="160" y="200" width="880" height="500" rx="40" fill="#ffffff" fill-opacity="0.18" />
+  <text x="600" y="490" text-anchor="middle" font-family="Inter, sans-serif" font-size="72" fill="#fff">Paisaje Premium</text>
+</svg>
