@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = 'https://panoramic-studio.onrender.com'
 
 export const photoService = {
   // Get all photos or filter by category
