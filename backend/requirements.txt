@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-groq
 python-multipart
 python-dotenv
 pillow>=10.0.0
+sqlmodel
