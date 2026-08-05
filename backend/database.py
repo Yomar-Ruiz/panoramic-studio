@@ -1,15 +1,22 @@
-from sqlmodel import SQLModel, create_engine, Session
-from pathlib import Path
 import os
+from pathlib import Path
+from sqlmodel import SQLModel, create_engine, Session
 
-BASE_DIR = Path(__file__).parent.absolute()
-DB_PATH = BASE_DIR / "photos.db"
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-DATABASE_URL = f"sqlite:///{DB_PATH}"
+if DATABASE_URL:
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    connect_args = {}
+else:
+    BASE_DIR = Path(__file__).resolve().parent
+    DB_PATH = BASE_DIR / "photos.db"
+    DATABASE_URL = f"sqlite:///{DB_PATH}"
+    connect_args = {"check_same_thread": False}
 
 engine = create_engine(
     DATABASE_URL,
-    connect_args={"check_same_thread": False},
+    connect_args=connect_args,
     echo=False
 )
 
